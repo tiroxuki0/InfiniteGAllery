@@ -1,0 +1,104 @@
+@import "~antd/dist/antd.css";
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+$primary: #202124;
+$hover: #4b4d52;
+
+body > * {
+  position: relative;
+  z-index: 10000;
+}
+
+h2 {
+  font-family: "Pacifico";
+}
+.fancybox__container{
+  z-index: 10000;
+}
+.ant-btn-primary {
+  border-color: $primary;
+  background: $primary;
+  &:hover {
+    border-color: $hover;
+    background: $hover;
+  }
+}
+.ant-input-affix-wrapper-focused,
+.ant-input-affix-wrapper:hover,
+.ant-input-affix-wrapper-focused, 
+.ant-input-affix-wrapper:focus{
+  border-color: $primary;
+  box-shadow: 0 0 0 2px rgba(3, 3, 3, 0.2);
+}
+
+.ant-btn-primary:focus{
+  border-color: $hover;
+    background: $hover;
+}
+
+.ant-checkbox-wrapper,
+.ant-checkbox-wrapper-checked {
+  &:hover {
+    .ant-checkbox-inner {
+      border-color: $primary;
+    }
+  }
+}
+.ant-checkbox-wrapper-checked {
+  .ant-checkbox-inner {
+    border-color: $primary;
+    background: $primary;
+  }
+}
+.image-grid-col-2 {
+  grid-column: span 2;
+}
+
+.image-grid-row-2 {
+  grid-row: span 2;
+}
+body {
+  margin: 0;
+}
+
+.image-grid {
+  --gap: 16px;
+  --num-cols: 4;
+  --row-height: 300px;
+
+  box-sizing: border-box;
+  padding: var(--gap);
+
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  grid-auto-rows: var(--row-height);
+  gap: var(--gap);
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.image-grid-col-2 {
+  grid-column: span 2;
+}
+
+.image-grid-row-2 {
+  grid-row: span 2;
+}
+
+.image-grid-col-3 {
+  grid-column: span 3;
+}
+.image-grid-row-3 {
+  grid-row: span 3;
+}
+
+/* Anything udner 1024px */
+@media screen and (max-width: 1024px) {
+  .image-grid {
+    --num-cols: 2;
+    --row-height: 200px;
+  }
+}

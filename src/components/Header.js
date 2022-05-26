@@ -83,7 +83,7 @@ function Header({ searchQuery }) {
         style={{ background: theme === "black" ? `#00000059` : `transparent` }}
       ></Layer>
       <Title>
-        <a href="" onClick={handleHomeLocation}>
+        <a href="/InfiniteGalleryyyyy" onClick={handleHomeLocation}>
           Infinite Gallery
         </a>
       </Title>

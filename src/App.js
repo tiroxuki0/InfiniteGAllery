@@ -15,24 +15,15 @@ import { useSelector } from "react-redux";
 import { changeThemeSelector } from "./redux/selectors";
 import { loginStateSelector } from "./redux/selectors";
 import { FiChevronUp } from "react-icons/fi";
+import { ImageNotFound } from "./images";
 
-const NotFound = styled.h3`
-  padding: 100px 0px;
+const NotFound = styled.div`
   width: 100%;
-  font-size: 35px;
+  height: auto;
   text-align: center;
   position: relative;
   z-index: 100;
-  &:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    background: white;
-    bottom: 0;
-    left: 0;
-    transform: translateY(65%);
-  }
+  overflow: hidden;
 `;
 
 const RollToTop = styled.div`
@@ -138,16 +129,20 @@ function App() {
         next={() => setPage(page + 1)}
         hasMore={true}
         loader={
-          <h2
-            style={{
-              textAlign: "center",
-              fontSize: "20px",
-              lineHeight: "50px",
-              color: theme === "black" ? `white` : `black`,
-            }}
-          >
-            Loading...
-          </h2>
+          images.length === 0 ? (
+            "none"
+          ) : (
+            <h2
+              style={{
+                textAlign: "center",
+                fontSize: "20px",
+                lineHeight: "50px",
+                color: theme === "black" ? `white` : `black`,
+              }}
+            >
+              Loading...
+            </h2>
+          )
         }
         endMessage={
           <p style={{ textAlign: "center" }}>
@@ -156,8 +151,10 @@ function App() {
         }
       >
         {/* if query not valid */}
-        {images === "error" ? (
-          <NotFound>ERROR try later please.</NotFound>
+        {images.length === 0 ? (
+          <NotFound>
+            <img src={ImageNotFound}></img>
+          </NotFound>
         ) : (
           <Gallery images={images} />
         )}

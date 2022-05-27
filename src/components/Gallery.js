@@ -25,7 +25,7 @@ function Gallery({ images }) {
             return (
               <ColStyled key={index} className={largeWidth}>
                 <a
-                  href={i.urls.full}
+                  href={i.urls.regular}
                   data-fancybox="gallery"
                   data-caption={i.description}
                 >

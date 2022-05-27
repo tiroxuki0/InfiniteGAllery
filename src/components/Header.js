@@ -73,7 +73,7 @@ function Header({ searchQuery }) {
 
   useEffect(() => {
     window.onload = () => {
-      history.push("/");
+      history.push("/InfiniteGalleryyyyy");
     };
   }, []);
 

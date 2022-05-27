@@ -68,7 +68,7 @@ function Header({ searchQuery }) {
   }
 
   const handleHomeLocation = () => {
-    history.push("/");
+    history.push("/InfiniteGAllery");
   };
 
   useEffect(() => {

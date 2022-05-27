@@ -73,7 +73,7 @@ function Header({ searchQuery }) {
 
   useEffect(() => {
     window.onload = () => {
-      history.push("/InfiniteGalleryyyyy");
+      history.push("/Infiniteee-GGGallery");
     };
   }, []);
 
@@ -83,7 +83,7 @@ function Header({ searchQuery }) {
         style={{ background: theme === "black" ? `#00000059` : `transparent` }}
       ></Layer>
       <Title>
-        <a href="/InfiniteGalleryyyyy" onClick={handleHomeLocation}>
+        <a href="/Infiniteee-GGGallery" onClick={handleHomeLocation}>
           Infinite Gallery
         </a>
       </Title>

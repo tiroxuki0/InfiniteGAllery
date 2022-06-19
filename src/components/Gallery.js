@@ -1,4 +1,9 @@
 import styled from "styled-components";
+import {
+  LazyLoadImage,
+  trackWindowScroll,
+} from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const ColStyled = styled.div`
   transition: all 0.4s ease;
@@ -29,10 +34,16 @@ function Gallery({ images }) {
                   data-fancybox="gallery"
                   data-caption={i.description}
                 >
-                  <img
+                  {/* <img
                     src={i.urls.regular}
                     data-download={i.links.download}
                     alt={i.urls.regular}
+                  /> */}
+                  <LazyLoadImage
+                    src={i.urls.regular}
+                    data-download={i.links.download}
+                    alt={i.urls.regular}
+                    effect="blur"
                   />
                 </a>
               </ColStyled>
@@ -42,4 +53,4 @@ function Gallery({ images }) {
   );
 }
 
-export default Gallery;
+export default trackWindowScroll(Gallery);
